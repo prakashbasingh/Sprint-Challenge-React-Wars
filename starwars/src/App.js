@@ -6,7 +6,7 @@ import Character from "./components/Character";
 import BodyContainer from './components/BodyContainer'
 
 const starWarsURL = 'https://swapi.py4e.com/api/people'
-
+const starWarLogo = 'https://vignette.wikia.nocookie.net/disney/images/5/5a/Star_Wars_Logo..png/revision/latest/scale-to-width-down/340?cb=20170102221646&path-prefix=es'
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -29,8 +29,13 @@ const App = () => {
   
   return (
     <BodyContainer className="App">
-      <h1 className="Header">Star War Characters</h1>
+      <header>
+        <img src = {starWarLogo}></img>
+        <h1 className="Header">Star War Characters</h1>
+        <img src = {starWarLogo}></img>
 
+      </header>
+      
       {characters.map((character, index) => (
       < Character character = {character} key = {index}/>
       ))}

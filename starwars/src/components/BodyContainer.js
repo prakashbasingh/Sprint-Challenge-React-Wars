@@ -9,9 +9,13 @@ const BodyContainer = styled.div`
     border-radius: 2rem; 
     box-shadow: 0 0 20px 8px black;
 
-    h1{
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
         background-color: black;
-        height: 3rem;
+        height: 5rem;
         color: #443e3e;
         text-shadow: 1px 1px 5px #fff;
         margin: 2rem;
@@ -28,6 +32,9 @@ const BodyContainer = styled.div`
             border-radius: 2rem;
             padding: 5px;
             font-weight: bold;
+        }
+        img{
+            height:4rem;
         }
     }
 
