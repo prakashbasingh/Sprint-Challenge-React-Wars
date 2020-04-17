@@ -1,20 +1,27 @@
 import React, {useState, useEffect} from 'react';
+import CardContainer from './CardContainer'
+
+
 const starWarsURL = 'https://swapi.py4e.com/api/people'
-import CharacterCard from "./CharacterCard";
 
 
 
 // Write your Character component here
-const Character = ()=>{
-    const[characterData] = useState(results)
+const Character = ({ character }) => {
 
     return(
-        <div className = 'character-container'>
-            {characterData.map((character, index) => (
-                <CharacterCard propsOfCharacter = {character} key = {index}/>
-            ))}
-        </div>
+        <CardContainer>
+            <h3 >Name: {character.name}</h3>
+            <div>
+                <p>Gender: {character.gender}</p>
+                <p>Birth Year: {character.birth_year}</p>
+                <p>Height: {character.height}</p>
+                <p>Mass: {character.mass}</p>
+            </div>
 
-    );
-};
-export default Character;
+            
+        </CardContainer>
+    )
+
+}
+export default Character

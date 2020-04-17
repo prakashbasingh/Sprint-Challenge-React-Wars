@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
-import Character from "./Character";
+import Character from "./components/Character";
+
+import BodyContainer from './components/BodyContainer'
 
 const starWarsURL = 'https://swapi.py4e.com/api/people'
 
@@ -10,7 +12,6 @@ const App = () => {
   // the state properties here.
   const [characters,  setCharacters] = useState([])
 
-  console.log('character Data!!!!!!!???????', characters)
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -27,10 +28,14 @@ const App = () => {
 
   
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Character/>
-    </div>
+    <BodyContainer className="App">
+      <h1 className="Header">Star War Characters</h1>
+
+      {characters.map((character, index) => (
+      < Character character = {character} key = {index}/>
+      ))}
+     
+    </BodyContainer>
   );
 }
 
